@@ -6,10 +6,13 @@ var server = net.createServer(serverConnection);
 function serverConnection(socketReq){
 
   var date = new Date();
+  var uri = '/';
 
   socketReq.on('data', function(buffer){
-    console.log('connection made!!!');
-    console.log(buffer.toString());
+    console.log('connection made');
+    socketReq.write('HTTP/1.1 200 OK\n\n');
+    // console.log(buffer.toString());
+    socketReq.write('this should be in the body');
     return socketReq.end();
   });
 
@@ -20,5 +23,5 @@ function serverConnection(socketReq){
 
 server.listen({port: 8080}, function(){
   address = server.address();
-  console.log('server listening')
+  console.log('server listening');
 });
