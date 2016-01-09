@@ -24,10 +24,12 @@ function connection(request, response) {
 
   if ( method === 'PUT'){
     console.log('PUT request');
+
     response.writeHead(200, {
-      'Content-Type' : "text/" + fileType.replace('.','')
+      'Content-Type' : "text/" + fileType.replace('.',''),
     });
-    response.end();
+
+    response.end('{ success: true }');
   } // end of response if PUT request
 
   if (method === "GET"){
@@ -43,7 +45,9 @@ function connection(request, response) {
     }
 
     fs.readFile("./public" + pathName, function(err,data){
-      if (err) console.log('404 FILE NOT FOUND');
+      if (err) response.writeHead (404, 'File Not Found', {
+          'test-header' : 'error out'
+      });
       response.end(data);
       });
   } // end of response if GET request
@@ -55,7 +59,7 @@ function connection(request, response) {
 
       // console.log('public/' + newElementForm.elementName +'.html');
 
-      response.writeHead(201, {
+      response.writeHead(201, 'File Made', {
         'Content-Type' : "text/" + fileType.replace('.','')
       });
 
