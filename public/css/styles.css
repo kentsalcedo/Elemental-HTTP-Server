@@ -23,6 +23,15 @@ h1 {
   left: 0;
 }
 
+.atomic-number {
+  color: #F80BA7;
+
+}
+
+.symbol {
+  color: #25F4F9;
+}
+
 a {
   color: #1A1717;
   /*color: #ffffff;*/
@@ -59,4 +68,8 @@ li:hover {
   color: #ffffff;
   background-color: #F80BA7;
   height: 40px;
+}
+
+h3 {
+  margin-left: 15px;
 }
