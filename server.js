@@ -116,7 +116,7 @@ function connection(request, response) {
     }); // end of on data requests
 
   response.end();
-  }
+  } // end of POST
 
 } // end of connection function
 
