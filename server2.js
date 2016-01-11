@@ -66,6 +66,7 @@ function handleGetRequest(request,response,method,pathName,fileType){
     return response.end(data);
     });
 
+
 }
 
 ////////////////////////////////////////////////////////////
