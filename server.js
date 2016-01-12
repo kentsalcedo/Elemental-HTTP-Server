@@ -51,6 +51,8 @@ server.listen({
   console.log('server listening');
 });
 
+ var elementCount = '5';
+
 ////////////////////////////////////////////////////////////
 /////////////// handles GET requests ///////////////////////
 ////////////////////////////////////////////////////////////
@@ -63,8 +65,16 @@ function handleGetRequest(request,response,method,pathName,fileType){
           response.end(data);
         });
       }
+
+      // var d = data.toString().split('<').replace(/\[ Total Elements:\/.*\/]// , elementCount);
+      // data.toString().replace(/\/Total\/Elements\/.+\//, elementCount);
+
+      // console.log(d);
+      // data.toString().replace(/\/Total\/Elements\/.+\//, elementCount);
       response.end(data);
+
     });
+
 
 }
 
