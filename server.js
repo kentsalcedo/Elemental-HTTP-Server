@@ -93,9 +93,9 @@ function handlePostRequest(request,response,method,pathName,fileType){
               if(err) console.log(err);
 
               newPost = data.toString();
-              newPost = newPost.replace( /template/gi,elementName);
+              newPost = newPost.replace( /template/gi,elementName.toUpperCase());
               newPost = newPost.replace(/ATOMICNUMBER/gi,newElementForm.elementAtomicNumber);
-              newPost = newPost.replace(/ELEMENTSYMBOL/gi,newElementForm.elementSymbol);
+              newPost = newPost.replace(/ELEMENTSYMBOL/gi,newElementForm.elementSymbol.toUpperCase());
               newPost = newPost.replace(/DESCRIPTION/gi,newElementForm.elementDescription);
 
               fs.writeFile('public/' + elementName + '.html', newPost, function(err){
